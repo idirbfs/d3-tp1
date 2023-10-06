@@ -18,16 +18,16 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
+            <h5>
               <Link className="nav-link" to="/">
                 Data
               </Link>
-            </li>
-            <li className="nav-item">
+            </h5>
+            <h5>
               <Link className="nav-link" to="/graphs">
                 Graph
               </Link>
-            </li>
+            </h5>
           </ul>
         </div>
       </div>

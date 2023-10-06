@@ -10,9 +10,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 function Graphs({ data }) {
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">
-        Réponses du Questionnaire de Transport
-      </h2>
+      <h2 className="text-center mb-4">Moyens de Transport à Paris 8</h2>
 
       <div className="row">
         <div className="col-md-3">

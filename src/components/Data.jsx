@@ -40,8 +40,8 @@ function Data({ data }) {
   });
 
   return (
-    <div className="container">
-      <h2 className="mt-3 mb-4">Moyens de Transport à Paris 8</h2>
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Moyens de Transport à Paris 8</h2>
       <Filters onFilterChange={handleFilterChange} filters={filters} user />
       <div className="row" id="chart">
         {filteredData.map((user, index) => (

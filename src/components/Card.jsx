@@ -3,7 +3,12 @@ import React from "react";
 const UserProfileCard = (props) => {
   return (
     <div className="card col-md-4">
-      <img src={props.imgURL} className="card-img-top" alt="User" />
+      <img
+        src={props.imgURL}
+        className="card-img-top img-fluid"
+        alt="User"
+        style={{ maxHeight: "260px" }}
+      />
       <div className="card-body">
         <h5 className="card-title">
           {props.nom} {props.prenom}
