@@ -8,7 +8,13 @@ import Filters from "./Filters";
 function Data({ data }) {
   const [filters, setFilters] = useState({
     fonction: ["Etudiant", "Enseignant"],
-    moyenTransport: ["Transports en commun", "Voiture", "Vélo", "Aucun"],
+    moyenTransport: [
+      "Transports en commun",
+      "Voiture",
+      "Vélo",
+      "Aucun",
+      "Moto",
+    ],
     departementResidence: ["75", "91", "92", "93", "94", "95", "77", "78"],
     dureeTrajet: [
       "0-15 min",

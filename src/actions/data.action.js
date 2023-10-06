@@ -8,12 +8,32 @@ export const setData = () => async (dispatch) => {
     );
 
     csvData.forEach((d) => {
-      d.photo = convertUrl(d.photo);
+      d["Photo de votre moyen de transport préferé"] = convertUrl(
+        d["Photo de votre moyen de transport préferé"]
+      );
     });
+
+    const data = [];
+    csvData.forEach((d) => {
+      data.push({
+        photo: d["Photo de votre moyen de transport préferé"],
+        nom: d["Nom"],
+        prenom: d["Prénom"],
+        fonction: d["Fonction"],
+        moyenTransport:
+          d["Vos moyens de transport pour se rendre à l'université"],
+        dureeTrajet:
+          d[
+            "Quel est le temps nécessaire pour se rendre à l'Université Paris 8 ?"
+          ],
+        departementResidence: d["Vous résidez dans quel département"],
+      });
+    });
+
     console.log(csvData);
     dispatch({
       type: "SET_DATA",
-      payload: csvData,
+      payload: data,
     });
   } catch (error) {
     console.error(error);

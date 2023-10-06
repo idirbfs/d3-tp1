@@ -42,6 +42,11 @@ export default function Filters({ onFilterChange, filters }) {
             checked={filters.moyenTransport.includes("Vélo")}
           />
           <CheckBox
+            label="Moto"
+            onChange={() => onFilterChange("moyenTransport", "Moto")}
+            checked={filters.moyenTransport.includes("Moto")}
+          />
+          <CheckBox
             label="Aucun"
             onChange={() => onFilterChange("moyenTransport", "Aucun")}
             checked={filters.moyenTransport.includes("Aucun")}
