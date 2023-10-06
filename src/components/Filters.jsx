@@ -13,48 +13,14 @@ export default function Filters() {
 
     fetchCSVData();
   }, []);
-  const [filters, setFilters] = useState({
-    fonction: [],
-    moyensTransport: [],
-    departementResidence: [],
-    dureeTrajet: [],
-  });
 
-  const handleCheckboxChange = (category, value) => {
-    // Clone the current state to avoid mutation
-    const newFilters = { ...filters };
-    console.log("working");
-
-    // Check if the value is already in the array
-    const index = newFilters[category].indexOf(value);
-
-    if (index === -1) {
-      // If not present, add the value
-      newFilters[category] = [...newFilters[category], value];
-    } else {
-      // If already present, remove the value
-      newFilters[category] = [
-        ...newFilters[category].slice(0, index),
-        ...newFilters[category].slice(index + 1),
-      ];
-    }
-
-    // Update the state
-    setFilters(newFilters);
-  };
   return (
     <div className="row p-2 border mb-2">
       <div className="col-md-3">
         <div className="block">
           <h5>Fonction</h5>
-          <CheckBox
-            label="Etudiant"
-            onChange={() => handleCheckboxChange("fonction", "Etudiant")}
-          />
-          <CheckBox
-            label="Enseignant"
-            onChange={() => handleCheckboxChange("fonction", "Enseignant")}
-          />
+          <CheckBox label="Etudiant" />
+          <CheckBox label="Enseignant" />
         </div>
       </div>
       <div className="col-md-3">

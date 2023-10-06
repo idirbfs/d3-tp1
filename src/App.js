@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { setData } from "./actions/data.action";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import Nav from "./components/Nav.jsx";
 import Data from "./components/Data.jsx";
@@ -11,7 +14,10 @@ const AppRoutes = () => (
     <Route path="/graphs" element={<Graphs />} />
   </Routes>
 );
-function App() {
+function App({ setData }) {
+  useEffect(() => {
+    setData();
+  }, [setData]);
   return (
     <BrowserRouter>
       <Nav />
@@ -20,4 +26,12 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  data: state.data,
+});
+
+App.propTypes = {
+  setData: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, { setData })(App);
